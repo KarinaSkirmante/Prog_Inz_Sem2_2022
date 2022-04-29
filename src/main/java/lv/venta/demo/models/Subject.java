@@ -1,6 +1,7 @@
 package lv.venta.demo.models;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -46,7 +47,7 @@ public class Subject {
         
         @OneToMany(mappedBy="subject")
         @ToString.Exclude
-        private ArrayList<Grade> grades;
+        private Collection<Grade> grades;
         
         
         public Subject(String title, int CP, Professor professor) {
