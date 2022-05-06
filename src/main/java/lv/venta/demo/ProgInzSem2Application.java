@@ -21,7 +21,7 @@ public class ProgInzSem2Application {
 		SpringApplication.run(ProgInzSem2Application.class, args);
 	}
 	
-	@Bean
+	//@Bean
 	public CommandLineRunner runner(IProfessorRepo profRepo, 
 			IStudentRepo studRepo, ISubjectRepo subRepo, 
 			IGradeRepo gradeRepo)
@@ -47,8 +47,8 @@ public class ProgInzSem2Application {
 				
 				
 				gradeRepo.save(new Grade(10, sub1, stud1));
-				gradeRepo.save(new Grade(3, sub1, stud1));
-				gradeRepo.save(new Grade(5, sub2, stud2));
+				gradeRepo.save(new Grade(3, sub1, stud2));
+				gradeRepo.save(new Grade(5, sub2, stud1));
 				gradeRepo.save(new Grade(7, sub2, stud2));
 				//TODO H2 vai MySQL
 				
