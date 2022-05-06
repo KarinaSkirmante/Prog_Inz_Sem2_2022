@@ -1,5 +1,8 @@
 package lv.venta.demo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,7 +24,7 @@ public class ProgInzSem2Application {
 		SpringApplication.run(ProgInzSem2Application.class, args);
 	}
 	
-	//@Bean
+	@Bean
 	public CommandLineRunner runner(IProfessorRepo profRepo, 
 			IStudentRepo studRepo, ISubjectRepo subRepo, 
 			IGradeRepo gradeRepo)
@@ -40,10 +43,16 @@ public class ProgInzSem2Application {
 				studRepo.save(stud1);
 				studRepo.save(stud2);
 				
-				Subject sub1 = new Subject("JAVA", 4, prof1);
-				Subject sub2 = new Subject("ProgInz", 4, prof2);
+				Subject sub1 = new Subject("JAVA", 4, new ArrayList<>(Arrays.asList(prof1)));
+				Subject sub2 = new Subject("ProgInz", 4, new ArrayList<>(Arrays.asList(prof1, prof2)));
 				subRepo.save(sub1);
 				subRepo.save(sub2);
+				
+				prof1.addSubject(sub1);
+				prof1.addSubject(sub2);
+				profRepo.save(prof1);
+				prof2.addSubject(sub2);
+				profRepo.save(prof2);
 				
 				
 				gradeRepo.save(new Grade(10, sub1, stud1));
