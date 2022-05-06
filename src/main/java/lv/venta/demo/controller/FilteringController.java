@@ -36,5 +36,5 @@ public class FilteringController {
 		model.addAttribute("object", filtService.getBadGrades());
 		return "grades-page";//atvers grades-page.html
 	}
-
+//TODO izsaukt 4 funkciju no servisa
 }

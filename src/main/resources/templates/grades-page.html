@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<h1>Atlasītie produkti</h1>
+	<body>
+	
+	<table>
+		<tr th:each="temp: ${object}">
+    		
+			<td th:text="${temp.getGradeValue()}" />
+			<td th:text="${temp.getSubject().getTitle()}" />
+			<td th:text="${temp.getStudent().getName()}" />
+			<td th:text="${temp.getStudent().getSurname()}" />
+		</tr>
+	
+	</table>
+	
+		
+		
+	</body>
+
+</html>
