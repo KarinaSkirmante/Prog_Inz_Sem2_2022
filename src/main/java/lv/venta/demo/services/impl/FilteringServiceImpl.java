@@ -23,20 +23,20 @@ public class FilteringServiceImpl implements IFilteringService {
 
 	@Override
 	public ArrayList<Grade> getAllGradesFromSubjectById(int subjectId) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Grade> result = gradeRepo.findBySubjectId_Subj(subjectId);
+		return result;
 	}
 
 	@Override
 	public ArrayList<Grade> getBadGrades() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Grade> result = gradeRepo.findByGrade_ValueLessThan(4);
+		return result;
 	}
 
 	@Override
 	public float getAVGFromSubject(int subjectId) {
-		// TODO Auto-generated method stub
-		return 0;
+		float result = gradeRepo.calculateAVGFromSubject(subjectId);
+		return result;
 	}
 
 }
