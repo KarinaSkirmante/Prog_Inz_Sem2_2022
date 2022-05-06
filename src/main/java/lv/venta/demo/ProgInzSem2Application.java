@@ -24,7 +24,14 @@ public class ProgInzSem2Application {
 		SpringApplication.run(ProgInzSem2Application.class, args);
 	}
 	
-	@Bean
+	
+	//TODO
+	//1. izveidot servisa interfeisu ar 6 abstraktām funkcijā
+	//2. izveidot servisa implementācijas klasi
+	//2.1. klasē izveido gradeRepo objektu
+	//2.2. caur to iegūt datus katrā no 6 funkcijām (pēc nepieciešamības)
+	
+	//@Bean
 	public CommandLineRunner runner(IProfessorRepo profRepo, 
 			IStudentRepo studRepo, ISubjectRepo subRepo, 
 			IGradeRepo gradeRepo)
