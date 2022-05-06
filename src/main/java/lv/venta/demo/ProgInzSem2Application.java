@@ -31,7 +31,7 @@ public class ProgInzSem2Application {
 	//2.1. klasē izveido gradeRepo objektu
 	//2.2. caur to iegūt datus katrā no 6 funkcijām (pēc nepieciešamības)
 	
-	//@Bean
+	@Bean
 	public CommandLineRunner runner(IProfessorRepo profRepo, 
 			IStudentRepo studRepo, ISubjectRepo subRepo, 
 			IGradeRepo gradeRepo)

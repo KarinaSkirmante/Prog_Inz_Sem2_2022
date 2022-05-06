@@ -17,19 +17,19 @@ public class FilteringServiceImpl implements IFilteringService {
 	
 	@Override
 	public ArrayList<Grade> getAllGradesFromStudentById(int studentId) {
-		ArrayList<Grade> result = gradeRepo.findByStudentId_St(studentId);
+		ArrayList<Grade> result = gradeRepo.findByStudentIdSt(studentId);
 		return result;
 	}
 
 	@Override
 	public ArrayList<Grade> getAllGradesFromSubjectById(int subjectId) {
-		ArrayList<Grade> result = gradeRepo.findBySubjectId_Subj(subjectId);
+		ArrayList<Grade> result = gradeRepo.findBySubjectIdSubj(subjectId);
 		return result;
 	}
 
 	@Override
 	public ArrayList<Grade> getBadGrades() {
-		ArrayList<Grade> result = gradeRepo.findByGrade_ValueLessThan(4);
+		ArrayList<Grade> result = gradeRepo.findByGradeValueLessThan(4);
 		return result;
 	}
 
