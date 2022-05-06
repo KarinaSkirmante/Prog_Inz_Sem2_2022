@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -40,20 +41,26 @@ public class Subject {
         private String title;
          
         
-             
+        /*     
         @OneToOne
         @JoinColumn(name="IdProf")
         private Professor professor;
+        */
+        
+        @ManyToMany(mappedBy="subjects")
+        private Collection<Professor> professors = new ArrayList<Professor>();
+        
+        
         
         @OneToMany(mappedBy="subject")
         @ToString.Exclude
         private Collection<Grade> grades;
         
         
-        public Subject(String title, int CP, Professor professor) {
+        public Subject(String title, int CP, Collection<Professor> professors) {
                 this.title =        title;
                 this.CP =                CP;
-                this.professor =         professor;
+                this.professors =         professors;
         }
 }
 
